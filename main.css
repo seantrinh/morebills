@@ -1,0 +1,136 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: 'Libre Franklin', sans-serif;
+	background:#8E24AA;
+	color:#eee;
+}
+
+p {
+	font-family: 'Merriweather', serif;
+}
+
+#compname {
+	margin-top:20px;
+	font-family:'Merriweather', serif;
+	color:orange;
+	font-size:4em;
+}
+
+button {
+	background:orange;
+	color:#fff;
+	border:2px solid white;
+	border-radius:10%;
+}
+
+
+.information {
+	width:100%;
+	float:left;
+	background:rgba(0,0,0,.2);
+	text-align:center;
+	margin: 0 auto 20px;
+}
+
+.information p {
+	padding:30px 10%;
+}
+
+.maintools {
+	width:80%;
+	float:left;
+}
+
+.account {
+	display:block;
+	text-align:center;
+}
+
+.account button {
+	width:200px;
+	height:60px;
+	margin:0 5%;
+	font-size:1.5em;
+	margin-top:30px;
+}
+
+.graph {
+	max-width:900px;
+	height:400px;
+	display:block;
+	margin:20px auto;
+	background:rgba(0,0,0,.2);
+	text-align:center;
+}
+
+#myChart {
+	max-height:100% !important;
+}
+
+.goals {
+	height:50px;
+	display:block;
+	text-align:center;
+	border-radius:10%;
+}
+
+#progress {
+	width:20%;
+	float:right;
+	margin:auto;
+	text-align:center;
+}
+
+.progressbar {
+	width:150px;
+	margin:auto;
+}
+
+#progresscontainer {
+	position:relative;
+	height:850px;
+	border:3px solid black;
+	background:rgba(0,0,0,.2);
+}
+
+#progressvalue {
+	position:absolute;
+	bottom:0;
+	background-color:orange;
+	height:250px;
+	max-height:850px;
+	border-radius:10% 10% 0 0;
+
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+
+#zerovalue {
+	position:absolute;
+	bottom:0;
+	margin-bottom:250px;
+	background:rgba(0,0,0,.2);
+	height:3px;
+}
+
+#zerolabel {
+	opacity:.2;
+	position:absolute;
+	bottom:0;
+	margin-bottom:250px;
+	display:block;
+	text-align:center;
+	font-size:1.5em;
+}
+
+form img {
+	height:64px;
+	width:128px;
+}

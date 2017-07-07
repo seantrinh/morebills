@@ -1,0 +1,118 @@
+ <!DOCTYPE HTML>
+   <HTML>
+      <head>
+      	<link rel="stylesheet" type="text/css" href="main.css">
+      	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+      	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <title>MoreBills</title>
+	</head>
+	<body>
+
+	<div class="information">
+		<h1 id="compname">MoreBills</h1>
+		<img src="logo.svg" height=300px>
+		<h1>We're here to save your wallet</h1>
+		<p>We created this web app to help college students budget. The main features of the app are the bank account, the progress chart, the goal list, and the bank meter. You enter your initial funds into your bank account. From there you are able to add or subtract any amount of money from your account. Enter values into the goals list and track your progress.
+		</p>
+
+	</div>
+
+	<div id="progress">
+	<div class="progressbar" id="progresscontainer">
+		<div class="progressbar" id="progressvalue">
+		</div>
+		<div class="progressbar" id="zerovalue"></div>
+		<label class="progressbar" id="zerolabel">0</label>
+	</div>
+	</div>
+
+
+	<div class="maintools">
+	<div class="account">
+		<h3 id="balance" ondrop="drop(event)" ondragover="allowDrop(event)">Balance: </h3>
+
+		<form id="bankaccount">
+			<input type="number" id="bal" placeholder="Enter your balance">
+			<button type="button" id ="enter" onclick="displayBalance(event)">Submit</button>
+		</form>
+		<br>
+		<form id="addorsub" style="display:none">
+			<button type="button" id="plus" onclick="showAddForm(event)">Add to Your Balance</button>
+			<button type="button" id="minus" onclick="showSubForm(event)">Subtract from Your Balance</button>
+		</form>
+
+		<form id="add" display="none" style="display:none;">
+			<p>Drag a value to your balance or enter a custom value to ADD:</p>
+			<img src="fivedollarbill.jpg" id="5" ondragstart="drag(event)" draggable="true"  alt="five">
+			<img src="tendollarbill.jpg" id="10" ondragstart="drag(event)" draggable="true"  alt="ten">
+			<img src="twentydollarbill.jpeg" id="20" ondragstart="drag(event)" draggable="true"  alt="twenty">
+			<img src="fiftydollarbill.jpg" id="50" ondragstart="drag(event)" draggable="true"  alt="fifty">
+			<img src="100bill.jpg" id="100" ondragstart="drag(event)" draggable="true" alt="onehundred">
+			<br>
+			<input type="number" id="customadd" placeholder="Enter a custom value::">
+			<input type="text" id="addreason" placeholder="Reason:">
+			<button type="button" id="enter" onclick="addToBalance(event)">Enter</button>
+		</form>
+
+		<form id="subtract" display="none" style="display:none">
+			<p>Drag a value to your balance or enter a custom value to SUBTRACT:</p>
+			<img src="fivedollarbill.jpg" id="-5" ondragstart="drag(event)" draggable="true" alt="five">
+			<img src="tendollarbill.jpg" id="-10" ondragstart="drag(event)" draggable="true" alt="ten">
+			<img src="twentydollarbill.jpeg" id="-20" ondragstart="drag(event)" draggable="true" alt="twenty">
+			<img src="fiftydollarbill.jpg" id="-50" ondragstart="drag(event)" draggable="true" alt="fifty">
+			<img src="100bill.jpg" id="-100" ondragstart="drag(event)" draggable="true" alt="onehundred">
+			<br>
+			<input type="number" id="customsub" placeholder="Enter a value to subtract: -">
+			<input type="text" id="addreason" placeholder="Reason:">
+			<button type="button" id="enter" onclick="subtractBalance(event)">Enter</button>
+		</form>
+
+		<form id="customadds" display="none" style="display:none">
+			<h4>Custom Submissions: </h4>
+		</form>
+
+		<form id="customsubs" display="none" style="display:none">
+			<h4>Custom Submissions: </h4>
+		</form>
+
+	</div>
+
+	<div class="graph" id="graph">
+		<canvas id="myChart"></canvas>
+	</div>
+
+	<div class="goals">
+		<h1>Goals</h1>
+		 <form id="userForm">
+      <input type="text" id="goal" placeholder="What is your goal?">
+      <input type="number" id="money" placeholder="How much is that?">
+      <button type="button" id="submitUser" onclick="getUserData(event)">Submit</button>
+      </form>
+    	<p id="goalvalue"></p>
+	</div>
+	</div>
+
+
+		
+
+
+	<script type="text/javascript">
+					</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+		<script>
+  		// Initialize Firebase
+  		var config = {
+    		apiKey: "AIzaSyAO7f1QyMDCy6UFIKKoX6BGbi9FSuHH1Hw",
+    		authDomain: "hackathon-thing.firebaseapp.com",
+    		databaseURL: "https://hackathon-thing.firebaseio.com",
+    		storageBucket: "hackathon-thing.appspot.com",
+    		messagingSenderId: "337133499265"
+  		};
+  		firebase.initializeApp(config);
+		</script>
+	<script src="main.js"></script>
+	</body>   
+   </HTML>
+
